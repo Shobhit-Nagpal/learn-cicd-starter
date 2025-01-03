@@ -41,7 +41,7 @@ jobs:
         run: test -z $(go fmt ./...)
 
       - name: Run staticcheck
-        run: staticchek ./...
+        run: staticcheck ./...
 
       - name: Result
         run: echo $?
