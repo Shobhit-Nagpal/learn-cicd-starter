@@ -16,8 +16,7 @@ func TestGetAPIKey(t *testing.T) {
 	tests := []test{
 		{map[string][]string{}, "", ErrNoAuthHeaderIncluded},
 		{map[string][]string{"Authorization": []string{"ApiKey abcd"}}, "abcd", nil},
-		{map[string][]string{"Authorization": []string{"ApiKey abcd"}}, "lol", nil},
-		{map[string][]string{"Authorization": []string{"abcd"}}, "", errors.New("malformed authorization header")},
+		{map[string][]string{"Authorization": []string{"ApiKey lol"}}, "lol", nil},
 		{map[string][]string{"Authorization": []string{"abcd"}}, "", errors.New("malformed authorization header")},
 	}
 
